@@ -11,6 +11,16 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        return new TreeBuilder('answear_boxnow');
+        $treeBuilder = new TreeBuilder('answear_box_now');
+
+        $treeBuilder->getRootNode()
+            ->children()
+                ->scalarNode('clientId')->isRequired()->cannotBeEmpty()->end()
+                ?->scalarNode('clientSecret')->isRequired()->cannotBeEmpty()->end()
+                ?->scalarNode('apiUrl')->defaultNull()->end()
+                ?->scalarNode('logger')->defaultNull()->end()
+            ?->end();
+
+        return $treeBuilder;
     }
 }

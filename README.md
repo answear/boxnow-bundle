@@ -21,10 +21,13 @@ should be added automatically to your `config/bundles.php` file by Symfony Flex.
 ```yaml
 # config/packages/answear_boxnow.yaml
 answear_boxnow:
-    environment: test|prod
-    apiKey: yourApiKey
-    logger: yourCustomLoggerService #default: null
+    clientId: yourClientId
+    clientSecret: yourClientSecret
+    apiUrl: apiUrl #default: 'https://api-stage.boxnow.gr'
+    logger: customLogger #default: null
 ```
+Logger service must implement Psr\Log\LoggerInterface interface.
+
 
 ## Usage
 
