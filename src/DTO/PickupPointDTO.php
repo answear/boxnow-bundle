@@ -11,8 +11,8 @@ class PickupPointDTO
         private readonly string $address,
         private readonly ?string $title = null,
         private readonly ?string $image = null,
-        private readonly ?string $latitude = null,
-        private readonly ?string $longitude = null,
+        private readonly ?float $latitude = null,
+        private readonly ?float $longitude = null,
         private readonly ?string $postalCode = null,
         private readonly ?string $country = null,
         private readonly ?string $note = null,
@@ -37,12 +37,12 @@ class PickupPointDTO
         return $this->image;
     }
 
-    public function getLatitude(): ?string
+    public function getLatitude(): ?float
     {
         return $this->latitude;
     }
 
-    public function getLongitude(): ?string
+    public function getLongitude(): ?float
     {
         return $this->longitude;
     }
