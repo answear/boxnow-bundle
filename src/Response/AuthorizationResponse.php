@@ -14,20 +14,20 @@ class AuthorizationResponse implements ResponseInterface
 
     private int $expiresIn;
 
-    public function __construct(private readonly array $data)
+    public function __construct(array $data)
     {
-        $this->handleData();
+        $this->handleData($data);
     }
 
-    public function handleData(): void
+    public function handleData(array $data): void
     {
-        Assert::string($this->data['access_token'] ?? null);
-        Assert::string($this->data['token_type'] ?? null);
-        Assert::integer($this->data['expires_in'] ?? null);
+        Assert::string($data['access_token'] ?? null);
+        Assert::string($data['token_type'] ?? null);
+        Assert::integer($data['expires_in'] ?? null);
 
-        $this->setAccessToken($this->data['access_token']);
-        $this->setTokenType($this->data['token_type']);
-        $this->setExpiresIn($this->data['expires_in']);
+        $this->setAccessToken($data['access_token']);
+        $this->setTokenType($data['token_type']);
+        $this->setExpiresIn($data['expires_in']);
     }
 
     public static function fromArray(array $data): self

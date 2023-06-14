@@ -24,7 +24,7 @@ class RequestTransformer implements RequestTransformerInterface
         $url = $this->configProvider->apiUrl . $request->getEndpoint();
 
         if (!is_null($request->getUrlQuery())) {
-            $url .= '&' . $request->getUrlQuery();
+            $url .= '?' . $request->getUrlQuery();
         }
 
         $body = 'GET' === $request->getMethod() ? null : $this->serializer->serialize($request);
@@ -32,7 +32,7 @@ class RequestTransformer implements RequestTransformerInterface
         return new HttpRequest(
             $request->getMethod(),
             new Uri($url),
-            ['Content-type' => 'application/json'] + $request->getHeaders(),
+            ['Content-Type' => 'application/json'] + $request->getHeaders(),
             $body
         );
     }

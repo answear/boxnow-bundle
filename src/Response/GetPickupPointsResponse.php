@@ -12,16 +12,16 @@ class GetPickupPointsResponse implements ResponseInterface
     /** @var PickupPointDTO[] */
     private array $pickupPoints = [];
 
-    public function __construct(private readonly array $data)
+    public function __construct(array $data)
     {
-        $this->handleData();
+        $this->handleData($data);
     }
 
-    public function handleData(): void
+    public function handleData(array $data): void
     {
-        $this->validatePickupPoints($this->data['data'] ?? []);
+        $this->validatePickupPoints($data['data'] ?? []);
 
-        foreach ($this->data['data'] as $pickupPoint) {
+        foreach ($data['data'] as $pickupPoint) {
             $this->pickupPoints[] = new PickupPointDTO(
                 id: $pickupPoint['id'],
                 type: $pickupPoint['type'],

@@ -111,7 +111,7 @@ class BoxNowLogger
         }
 
         try {
-            return json_decode(json: $content, associative: true, depth: 512, flags: JSON_THROW_ON_ERROR);
+            return json_decode(json: $content, associative: true, flags: JSON_THROW_ON_ERROR);
         } catch (Throwable) {
             return self::INVALID_JSON;
         }

@@ -38,7 +38,7 @@ class Client
         } catch (GuzzleException $exception) {
             $this->logger->logError($request->getEndpoint(), $exception);
 
-            throw new RequestException($exception->getMessage(), $exception->getCode());
+            throw new RequestException($exception->getMessage(), $exception->getCode(), $exception);
         } catch (\Throwable $throwable) {
             $this->logger->logError($request->getEndpoint(), $throwable);
 
