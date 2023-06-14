@@ -8,7 +8,7 @@ Documentation of the API can be found here: https://boxnow.gr/en/partner-api
 * install with Composer
 
 ```
-composer require git@github.com:answear/boxnow-bundle.git
+composer require answear/boxnow-bundle
 ```
 
 `Answear\BoxNowBundle\AnswearBoxNowBundle::class => ['all' => true],`  
