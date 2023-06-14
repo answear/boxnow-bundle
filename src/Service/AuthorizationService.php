@@ -21,8 +21,8 @@ class AuthorizationService
     {
         $response = $this->client->request(
             new AuthorizeRequest(
-                $this->configProvider->getClientId(),
-                $this->configProvider->getClientSecret()
+                $this->configProvider->clientId,
+                $this->configProvider->clientSecret
             )
         );
 

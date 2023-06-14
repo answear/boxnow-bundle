@@ -21,7 +21,7 @@ class RequestTransformer implements RequestTransformerInterface
 
     public function transform(RequestInterface $request): PsrRequestInterface
     {
-        $url = $this->configProvider->getApiUrl() . $request->getEndpoint();
+        $url = $this->configProvider->apiUrl . $request->getEndpoint();
 
         if (!is_null($request->getUrlQuery())) {
             $url .= '&' . $request->getUrlQuery();

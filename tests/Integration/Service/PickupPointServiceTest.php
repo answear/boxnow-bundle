@@ -29,20 +29,20 @@ class PickupPointServiceTest extends ServiceTestCase
 
         foreach ($pickupPoints as $pickupPoint) {
             $actualData[] = [
-                'id' => $pickupPoint->getId(),
-                'type' => $pickupPoint->getType(),
-                'name' => $pickupPoint->getName(),
-                'address' => $pickupPoint->getAddress(),
-                'title' => $pickupPoint->getTitle(),
-                'image' => $pickupPoint->getImage(),
-                'latitude' => $pickupPoint->getLatitude(),
-                'longitude' => $pickupPoint->getLongitude(),
-                'postalCode' => $pickupPoint->getPostalCode(),
-                'country' => $pickupPoint->getCountry(),
-                'note' => $pickupPoint->getNote(),
-                'additionalAddress' => $pickupPoint->getAdditionalAddress(),
-                'expectedDeliveryTime' => $pickupPoint->getExpectedDeliveryTime(),
-                'region' => $pickupPoint->getRegion(),
+                'id' => $pickupPoint->id,
+                'type' => $pickupPoint->type,
+                'name' => $pickupPoint->name,
+                'address' => $pickupPoint->address,
+                'title' => $pickupPoint->title,
+                'image' => $pickupPoint->image,
+                'latitude' => $pickupPoint->latitude,
+                'longitude' => $pickupPoint->longitude,
+                'postalCode' => $pickupPoint->postalCode,
+                'country' => $pickupPoint->country,
+                'note' => $pickupPoint->note,
+                'additionalAddress' => $pickupPoint->additionalAddress,
+                'expectedDeliveryTime' => $pickupPoint->expectedDeliveryTime,
+                'region' => $pickupPoint->region,
             ];
         }
 
