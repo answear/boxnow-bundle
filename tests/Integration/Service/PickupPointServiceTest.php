@@ -44,6 +44,11 @@ class PickupPointServiceTest extends ServiceTestCase
                 'expectedDeliveryTime' => $pickupPoint->expectedDeliveryTime,
                 'region' => $pickupPoint->region,
             ];
+
+            $this->assertSame(
+                $pickupPoint->address . ', ' . $pickupPoint->additionalAddress,
+                $pickupPoint->getFullAddress(', ')
+            );
         }
 
         $this->assertSame(
