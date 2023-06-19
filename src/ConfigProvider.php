@@ -6,4 +6,12 @@ namespace Answear\BoxNowBundle;
 
 class ConfigProvider
 {
+    private const API_URL = 'https://api-stage.boxnow.gr';
+
+    public function __construct(
+        public readonly string $clientId,
+        public readonly string $clientSecret,
+        public readonly string $apiUrl = self::API_URL,
+    ) {
+    }
 }

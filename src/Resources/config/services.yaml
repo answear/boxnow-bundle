@@ -5,3 +5,14 @@ services:
         public: false
 
     Answear\BoxNowBundle\ConfigProvider: ~
+
+    Answear\BoxNowBundle\Client\Client: ~
+    Answear\BoxNowBundle\Serializer\Serializer: ~
+    Answear\BoxNowBundle\Client\RequestTransformer: ~
+    Answear\BoxNowBundle\Service\AuthorizationService: ~
+    Answear\BoxNowBundle\Service\PickupPointService: ~
+
+    Answear\BoxNowBundle\Logger\BoxNowLogger:
+        shared: false
+
+    Answear\BoxNowBundle\Client\RequestTransformerInterface: '@Answear\BoxNowBundle\Client\RequestTransformer'

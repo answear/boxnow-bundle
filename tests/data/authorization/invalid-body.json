@@ -1,0 +1,7 @@
+{
+    "code": "InvalidJsonSchema",
+    "status": 400,
+    "jsonSchemaErrors": [
+        "/ must have required property 'grant_type'; missingProperty: grant_type"
+    ]
+}

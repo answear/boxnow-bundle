@@ -8,7 +8,7 @@ Documentation of the API can be found here: https://boxnow.gr/en/partner-api
 * install with Composer
 
 ```
-composer require git@github.com:answear/boxnow-bundle.git
+composer require answear/boxnow-bundle
 ```
 
 `Answear\BoxNowBundle\AnswearBoxNowBundle::class => ['all' => true],`  
@@ -20,15 +20,35 @@ should be added automatically to your `config/bundles.php` file by Symfony Flex.
 
 ```yaml
 # config/packages/answear_boxnow.yaml
-answear_boxnow:
-    environment: test|prod
-    apiKey: yourApiKey
-    logger: yourCustomLoggerService #default: null
+answear_box_now:
+    clientId: yourClientId
+    clientSecret: yourClientSecret
+    apiUrl: apiUrl #default: 'https://api-stage.boxnow.gr'
+    logger: customLogger #default: null
 ```
+Logger service must implement Psr\Log\LoggerInterface interface.
+
 
 ## Usage
 
-### TODO
+### Authorization
+```php
+/** @var \Answear\BoxNowBundle\Service\AuthorizationService $authorizationService **/
+$auth = $authorizationService->authorize();
+
+$auth->getAccessToken();
+$auth->getExpiresIn();
+$auth->getTokenType();
+```
+will return `\Answear\BoxNowBundle\Response\AuthorizationResponse`.
+
+
+### Pickup points
+```php
+/** @var \Answear\BoxNowBundle\Service\PickupPointService $pickupPoints **/
+$pickupPoints->getAll(token: 'accessToken');
+```
+will return `\Answear\BoxNowBundle\DTO\PickupPointDTO[]`.
 
 Final notes
 ------------

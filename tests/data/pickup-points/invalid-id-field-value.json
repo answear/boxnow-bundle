@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": null,
+            "type": "any-apm",
+            "image": null,
+            "title": "Any-APM",
+            "name": "Any-APM",
+            "postalCode": null,
+            "country": null,
+            "addressLine1": "Wildcard APM used as an origin location",
+            "addressLine2": null,
+            "region": null
+        }
+    ]
+}
