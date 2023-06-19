@@ -12,7 +12,10 @@ use Webmozart\Assert\InvalidArgumentException;
 
 class PickupPointServiceTest extends ServiceTestCase
 {
-    public function testSuccessfulListAllPickupPoints(): void
+    /**
+     * @test
+     */
+    public function successfulListAllPickupPoints(): void
     {
         $this->setClient(withLogger: true);
         $service = $this->getService();
@@ -57,7 +60,10 @@ class PickupPointServiceTest extends ServiceTestCase
         );
     }
 
-    public function testInvalidPickupPointIdFieldValue(): void
+    /**
+     * @test
+     */
+    public function invalidPickupPointIdFieldValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Field id expected to be a string. Got: ');
@@ -75,7 +81,10 @@ class PickupPointServiceTest extends ServiceTestCase
         $service->getAll('token');
     }
 
-    public function testInvalidPickupPointNameFieldValue(): void
+    /**
+     * @test
+     */
+    public function invalidPickupPointNameFieldValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Field name expected to be a string. Got: ');
@@ -93,7 +102,10 @@ class PickupPointServiceTest extends ServiceTestCase
         $service->getAll('token');
     }
 
-    public function testInvalidPickupPointAddressFieldValue(): void
+    /**
+     * @test
+     */
+    public function invalidPickupPointAddressFieldValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Field addressLine1 expected to be a string. Got: ');

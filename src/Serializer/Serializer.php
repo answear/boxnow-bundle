@@ -15,9 +15,7 @@ use Symfony\Component\Serializer\Serializer as SymfonySerializer;
 class Serializer
 {
     private const FORMAT = 'json';
-
     private const DATE_FORMAT = 'Y-m-d\\TH:i:s.uP';
-
     private SymfonySerializer $serializer;
 
     public function serialize(RequestInterface $request): string

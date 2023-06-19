@@ -19,7 +19,6 @@ class ServiceTestCase extends TestCase
     use MockGuzzleTrait;
 
     protected Serializer $serializer;
-
     protected Client $client;
 
     public function setUp(): void

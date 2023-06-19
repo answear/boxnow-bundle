@@ -13,7 +13,10 @@ use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 class AuthorizationServiceTest extends ServiceTestCase
 {
-    public function testSuccessfulAuthorization(): void
+    /**
+     * @test
+     */
+    public function successfulAuthorization(): void
     {
         $this->setClient(withLogger: true);
         $service = $this->getService();
@@ -34,7 +37,10 @@ class AuthorizationServiceTest extends ServiceTestCase
         $this->assertSame(3600, $response->getExpiresIn());
     }
 
-    public function testWrongCredentialsAuthorization(): void
+    /**
+     * @test
+     */
+    public function wrongCredentialsAuthorization(): void
     {
         $this->expectException(RequestException::class);
 
@@ -51,7 +57,10 @@ class AuthorizationServiceTest extends ServiceTestCase
         $service->authorize();
     }
 
-    public function testInvalidBodyAuthorization(): void
+    /**
+     * @test
+     */
+    public function invalidBodyAuthorization(): void
     {
         $this->expectException(RequestException::class);
         $this->expectExceptionCode(SymfonyResponse::HTTP_BAD_REQUEST);

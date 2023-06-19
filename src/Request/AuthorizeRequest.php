@@ -7,7 +7,6 @@ namespace Answear\BoxNowBundle\Request;
 class AuthorizeRequest implements RequestInterface
 {
     private const ENDPOINT = '/api/v1/auth-sessions';
-
     private const HTTP_METHOD = 'POST';
 
     public function __construct(

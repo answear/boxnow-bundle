@@ -17,9 +17,11 @@ class ConfigurationTest extends TestCase
     use ConfigurationTestCaseTrait;
 
     /**
+     * @test
+     *
      * @dataProvider provideValidConfig
      */
-    public function testValidTest(array $configs): void
+    public function validTest(array $configs): void
     {
         $this->assertConfigurationIsValid($configs);
 
@@ -39,9 +41,11 @@ class ConfigurationTest extends TestCase
     }
 
     /**
+     * @test
+     *
      * @dataProvider provideInvalidConfig
      */
-    public function testInvalidConfig(array $config, string|null $expectedMessage = null): void
+    public function invalidConfig(array $config, string|null $expectedMessage = null): void
     {
         $this->assertConfigurationIsInvalid(
             $config,
@@ -50,9 +54,11 @@ class ConfigurationTest extends TestCase
     }
 
     /**
+     * @test
+     *
      * @dataProvider provideInvalidLogger
      */
-    public function testInvalidLogger(array $configs, \Throwable $expectedException): void
+    public function invalidLogger(array $configs, \Throwable $expectedException): void
     {
         $this->expectException(get_class($expectedException));
         $this->expectExceptionMessage($expectedException->getMessage());

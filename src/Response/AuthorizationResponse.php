@@ -9,9 +9,7 @@ use Webmozart\Assert\Assert;
 class AuthorizationResponse implements ResponseInterface
 {
     private string $accessToken;
-
     private string $tokenType;
-
     private int $expiresIn;
 
     public function __construct(array $data)

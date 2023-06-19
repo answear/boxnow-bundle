@@ -13,7 +13,6 @@ use GuzzleHttp\Psr7\Response;
 trait MockGuzzleTrait
 {
     protected array $clientHistory = [];
-
     protected MockHandler $guzzleHandler;
 
     public function setupGuzzleClient(): Client

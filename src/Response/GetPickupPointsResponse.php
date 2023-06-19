@@ -23,20 +23,20 @@ class GetPickupPointsResponse implements ResponseInterface
 
         foreach ($data['data'] as $pickupPoint) {
             $this->pickupPoints[] = new PickupPointDTO(
-                id: $pickupPoint['id'],
-                type: $pickupPoint['type'],
-                name: $pickupPoint['name'],
-                address: $pickupPoint['addressLine1'],
-                title: $pickupPoint['title'] ?? null,
-                image: $pickupPoint['image'] ?? null,
-                latitude: isset($pickupPoint['lat']) ? (float) $pickupPoint['lat'] : null,
-                longitude: isset($pickupPoint['lng']) ? (float) $pickupPoint['lng'] : null,
-                postalCode: $pickupPoint['postalCode'] ?? null,
-                country: $pickupPoint['country'] ?? null,
-                note: $pickupPoint['note'] ?? null,
-                additionalAddress: $pickupPoint['addressLine2'] ?? null,
-                expectedDeliveryTime: $pickupPoint['expectedDeliveryTime'] ?? null,
-                region: $pickupPoint['region'] ?? null,
+                $pickupPoint['id'],
+                $pickupPoint['type'],
+                $pickupPoint['name'],
+                $pickupPoint['addressLine1'],
+                $pickupPoint['title'] ?? null,
+                $pickupPoint['image'] ?? null,
+                isset($pickupPoint['lat']) ? (float) $pickupPoint['lat'] : null,
+                isset($pickupPoint['lng']) ? (float) $pickupPoint['lng'] : null,
+                $pickupPoint['postalCode'] ?? null,
+                $pickupPoint['country'] ?? null,
+                $pickupPoint['note'] ?? null,
+                $pickupPoint['addressLine2'] ?? null,
+                $pickupPoint['expectedDeliveryTime'] ?? null,
+                $pickupPoint['region'] ?? null,
             );
         }
     }
