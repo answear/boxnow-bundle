@@ -12,12 +12,15 @@ use Psr\Http\Message\ResponseInterface;
 
 class Client
 {
+    private const CONNECTION_TIMEOUT = 10;
+    private const TIMEOUT = 30;
+    
     public function __construct(
         private readonly RequestTransformerInterface $requestTransformer,
         private readonly BoxNowLogger $logger,
         private ?ClientInterface $client = null,
     ) {
-        $this->client ??= new GuzzleClient();
+        $this->client ??= new GuzzleClient(['timeout' => self::TIMEOUT, 'connect_timeout' => self::CONNECTION_TIMEOUT]);
     }
 
     public function request(RequestInterface $request): ResponseInterface
