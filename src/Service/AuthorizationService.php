@@ -8,12 +8,12 @@ use Answear\BoxNowBundle\Request\AuthorizeRequest;
 use Answear\BoxNowBundle\Response\AuthorizationResponse;
 use Answear\BoxNowBundle\Serializer\Serializer;
 
-class AuthorizationService
+readonly class AuthorizationService
 {
     public function __construct(
-        private readonly ConfigProvider $configProvider,
-        private readonly Serializer $serializer,
-        private readonly Client $client,
+        private ConfigProvider $configProvider,
+        private Serializer $serializer,
+        private Client $client,
     ) {
     }
 

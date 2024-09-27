@@ -8,6 +8,8 @@ use Answear\BoxNowBundle\ConfigProvider;
 use Answear\BoxNowBundle\DependencyInjection\AnswearBoxNowExtension;
 use Answear\BoxNowBundle\DependencyInjection\Configuration;
 use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
@@ -16,11 +18,8 @@ class ConfigurationTest extends TestCase
 {
     use ConfigurationTestCaseTrait;
 
-    /**
-     * @test
-     *
-     * @dataProvider provideValidConfig
-     */
+    #[Test]
+    #[DataProvider('provideValidConfig')]
     public function validTest(array $configs): void
     {
         $this->assertConfigurationIsValid($configs);
@@ -40,12 +39,9 @@ class ConfigurationTest extends TestCase
         }
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideInvalidConfig
-     */
-    public function invalidConfig(array $config, string|null $expectedMessage = null): void
+    #[Test]
+    #[DataProvider('provideInvalidConfig')]
+    public function invalidConfig(array $config, ?string $expectedMessage = null): void
     {
         $this->assertConfigurationIsInvalid(
             $config,
@@ -53,11 +49,8 @@ class ConfigurationTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider provideInvalidLogger
-     */
+    #[Test]
+    #[DataProvider('provideInvalidLogger')]
     public function invalidLogger(array $configs, \Throwable $expectedException): void
     {
         $this->expectException(get_class($expectedException));
@@ -71,7 +64,7 @@ class ConfigurationTest extends TestCase
         $extension->load($configs, $builder);
     }
 
-    public function provideInvalidConfig(): iterable
+    public static function provideInvalidConfig(): iterable
     {
         yield [
             [
@@ -99,7 +92,7 @@ class ConfigurationTest extends TestCase
         ];
     }
 
-    public function provideInvalidLogger(): iterable
+    public static function provideInvalidLogger(): iterable
     {
         yield [
             [
@@ -113,7 +106,7 @@ class ConfigurationTest extends TestCase
         ];
     }
 
-    public function provideValidConfig(): iterable
+    public static function provideValidConfig(): iterable
     {
         yield [
             [

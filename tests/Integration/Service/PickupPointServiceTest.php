@@ -7,14 +7,13 @@ namespace Answear\BoxNowBundle\Tests\Integration\Service;
 use Answear\BoxNowBundle\Service\PickupPointService;
 use Answear\BoxNowBundle\Tests\Util\FileTestUtil;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Webmozart\Assert\InvalidArgumentException;
 
 class PickupPointServiceTest extends ServiceTestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function successfulListAllPickupPoints(): void
     {
         $this->setClient(withLogger: true);
@@ -60,9 +59,7 @@ class PickupPointServiceTest extends ServiceTestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function invalidPickupPointIdFieldValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -81,9 +78,7 @@ class PickupPointServiceTest extends ServiceTestCase
         $service->getAll('token');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function invalidPickupPointNameFieldValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
@@ -102,9 +97,7 @@ class PickupPointServiceTest extends ServiceTestCase
         $service->getAll('token');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function invalidPickupPointAddressFieldValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
