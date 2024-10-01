@@ -8,11 +8,11 @@ use Answear\BoxNowBundle\Request\GetPickupPointsRequest;
 use Answear\BoxNowBundle\Response\GetPickupPointsResponse;
 use Answear\BoxNowBundle\Serializer\Serializer;
 
-class PickupPointService
+readonly class PickupPointService
 {
     public function __construct(
-        private readonly Client $client,
-        private readonly Serializer $serializer,
+        private Client $client,
+        private Serializer $serializer,
     ) {
     }
 

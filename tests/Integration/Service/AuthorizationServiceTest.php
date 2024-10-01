@@ -5,17 +5,15 @@ declare(strict_types=1);
 namespace Answear\BoxNowBundle\Tests\Integration\Service;
 
 use Answear\BoxNowBundle\Exception\RequestException;
-use Answear\BoxNowBundle\Response\AuthorizationResponse;
 use Answear\BoxNowBundle\Service\AuthorizationService;
 use Answear\BoxNowBundle\Tests\Util\FileTestUtil;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 class AuthorizationServiceTest extends ServiceTestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function successfulAuthorization(): void
     {
         $this->setClient(withLogger: true);
@@ -30,16 +28,12 @@ class AuthorizationServiceTest extends ServiceTestCase
 
         $response = $service->authorize();
 
-        $this->assertInstanceOf(AuthorizationResponse::class, $response);
-
         $this->assertSame('--access-token--', $response->getAccessToken());
         $this->assertSame('Bearer', $response->getTokenType());
         $this->assertSame(3600, $response->getExpiresIn());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function wrongCredentialsAuthorization(): void
     {
         $this->expectException(RequestException::class);
@@ -57,9 +51,7 @@ class AuthorizationServiceTest extends ServiceTestCase
         $service->authorize();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function invalidBodyAuthorization(): void
     {
         $this->expectException(RequestException::class);
