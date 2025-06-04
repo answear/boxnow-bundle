@@ -1,0 +1,82 @@
+{
+    "data": [
+        {
+            "id": "5680",
+            "title": "EYPΩΠHΣ 11, 7100",
+            "name": "Eurofreight - Λάρνακα",
+            "addressLine1": "Ευρώπης 11",
+            "addressLine2": "Λάρνακα",
+            "postalCode": "7100",
+            "country": "CY",
+            "image": "https://storage.googleapis.com/boxnow-production-images/images/operations-manager/04_01_2024/06381237-474a-4933-a19c-5cae2a9cb9cf",
+            "note": "Επί της οδού Ευρώπης, στα κεντρικά γραφεία της Eurofreight.",
+            "region": "el-CY",
+            "state": "boxnow-ready",
+            "availability": {
+                "l4cAvailable": true,
+                "l4eAvailable": true,
+                "m4cAvailable": true,
+                "m4eAvailable": true,
+                "s4cAvailable": true,
+                "s4eAvailable": true
+            },
+            "probability": {
+                "l": 1
+            },
+            "lat": "34.906763099758926",
+            "lng": "33.569478671177926"
+        },
+        {
+            "id": "5795",
+            "title": "KYP. MATΣH 25, 7104",
+            "name": "Φαρμακείο Κυπριανού - Αραδίππου",
+            "addressLine1": "Λεωφόρος Κυρ. Μάτση 25",
+            "addressLine2": "Αραδίππου",
+            "postalCode": "7104",
+            "country": "CY",
+            "image": "https://storage.googleapis.com/boxnow-production-images/images/operations-manager/19_10_2023/58d9eeac-1fe5-46d8-8512-902c5e95ae8c",
+            "note": "Επί της Λεωφόρου Κυρ. Μάτση, στο φαρμακείο Κυπριανού.",
+            "region": "el-CY",
+            "state": "boxnow-ready",
+            "availability": {
+                "l4cAvailable": true,
+                "l4eAvailable": true,
+                "m4cAvailable": true,
+                "m4eAvailable": true,
+                "s4cAvailable": true,
+                "s4eAvailable": true
+            },
+            "probability": {
+                "l": 1
+            },
+            "lat": "34.94554147",
+            "lng": "33.59534592"
+        },
+        {
+            "id": "5998",
+            "title": "ΛEΩΦ. EΛEYΘEPIAΣ 7, 7102",
+            "name": "Lidl  - Aραδίππου",
+            "addressLine1": "Λεωφ. Ελευθερίας 7",
+            "addressLine2": "Αραδίππου",
+            "postalCode": "7102",
+            "country": "CY",
+            "image": "https://storage.googleapis.com/boxnow-production-images/images/operations-manager/03_11_2023/30153c25-d450-4827-83a2-1ea13c8068ba",
+            "note": "Επί της Λεωφόρου Ελευθερίας, στο supermarket Lidl.",
+            "region": "el-CY",
+            "state": "boxnow-ready",
+            "availability": {
+                "l4cAvailable": true,
+                "l4eAvailable": true,
+                "m4cAvailable": true,
+                "m4eAvailable": true,
+                "s4cAvailable": true,
+                "s4eAvailable": true
+            },
+            "probability": {
+                "l": 1
+            },
+            "lat": "34.93708271",
+            "lng": "33.59143508"
+        }
+    ]
+}
