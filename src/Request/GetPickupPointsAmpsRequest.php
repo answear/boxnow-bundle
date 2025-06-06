@@ -6,8 +6,8 @@ namespace Answear\BoxNowBundle\Request;
 
 readonly class GetPickupPointsAmpsRequest implements RequestInterface
 {
-    private const ENDPOINT = '/api/v1/apms:customerSearch';
-    private const HTTP_METHOD = 'GET';
+    private const string ENDPOINT = '/api/v1/apms:customerSearch';
+    private const string HTTP_METHOD = 'GET';
 
     public function __construct(
         private string $token,

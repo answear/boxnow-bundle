@@ -47,7 +47,7 @@ class PickupPointWithRegionServiceTest extends ServiceTestCase
                 'region' => $pickupPoint->region,
             ];
 
-            $this->assertSame(
+            self::assertSame(
                 $pickupPoint->address . ', ' . $pickupPoint->additionalAddress,
                 $pickupPoint->getFullAddress(', ')
             );
@@ -78,11 +78,6 @@ class PickupPointWithRegionServiceTest extends ServiceTestCase
         $service->getAllWithRegion('token', 'region');
     }
 
-    private function getService(): PickupPointService
-    {
-        return new PickupPointService($this->getClient(), $this->getSerializer());
-    }
-
     protected function getLoggerStream(): array
     {
         return [
@@ -107,5 +102,10 @@ class PickupPointWithRegionServiceTest extends ServiceTestCase
                 'response' => '--- HUGE CONTENT SKIPPED ---',
             ],
         ];
+    }
+
+    private function getService(): PickupPointService
+    {
+        return new PickupPointService($this->getClient(), $this->getSerializer());
     }
 }
