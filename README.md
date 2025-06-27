@@ -23,15 +23,16 @@ should be added automatically to your `config/bundles.php` file by Symfony Flex.
 answear_box_now:
     clientId: yourClientId
     clientSecret: yourClientSecret
-    apiUrl: apiUrl #default: 'https://api-stage.boxnow.gr'
+    apiUrl: apiUrl #default: 'https://locationapi-stage.boxnow.gr'
     logger: customLogger #default: null
 ```
-Logger service must implement Psr\Log\LoggerInterface interface.
 
+Logger service must implement Psr\Log\LoggerInterface interface.
 
 ## Usage
 
 ### Authorization
+
 ```php
 /** @var \Answear\BoxNowBundle\Service\AuthorizationService $authorizationService **/
 $auth = $authorizationService->authorize();
@@ -40,15 +41,25 @@ $auth->getAccessToken();
 $auth->getExpiresIn();
 $auth->getTokenType();
 ```
+
 will return `\Answear\BoxNowBundle\Response\AuthorizationResponse`.
 
-
 ### Pickup points
+
 ```php
 /** @var \Answear\BoxNowBundle\Service\PickupPointService $pickupPoints **/
 $pickupPoints->getAll(token: 'accessToken');
 ```
+
 will return `\Answear\BoxNowBundle\DTO\PickupPointDTO[]`.
+
+Or with locationapi (ex. https://locationapi-stage.boxnow.gr/v1/apms_el-GR.json)
+```php
+/** @var \Answear\BoxNowBundle\Service\PickupPointService $pickupPoints **/
+$pickupPoints->getAllByRegion(\Answear\BoxNowBundle\Enum\RegionEnum::Cyprus);
+```
+
+will return `\Answear\BoxNowBundle\DTO\PickupPointDTO[]` only for Cyprus (available Greece, Cyprus, Croatia).
 
 Final notes
 ------------
