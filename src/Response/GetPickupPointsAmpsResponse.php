@@ -25,6 +25,7 @@ class GetPickupPointsAmpsResponse implements ResponseInterface
             $this->pickupPoints[] = new PickupPointDTO(
                 $pickupPoint['id'],
                 $pickupPoint['state'],
+                $pickupPoint['state'],
                 $pickupPoint['name'],
                 $pickupPoint['addressLine1'],
                 $pickupPoint['title'] ?? null,

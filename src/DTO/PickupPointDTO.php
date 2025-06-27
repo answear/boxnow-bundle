@@ -7,6 +7,7 @@ readonly class PickupPointDTO
     public function __construct(
         public string $id,
         public string $type,
+        public string $state,
         public string $name,
         public string $address,
         public ?string $title = null,
