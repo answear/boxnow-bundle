@@ -1,5 +1,8 @@
 grumphp:
     process_timeout: 120
+    environment:
+        variables:
+            PHP_CS_FIXER_IGNORE_ENV: "1"
     ascii:
         failed: ~
         succeeded: ~
