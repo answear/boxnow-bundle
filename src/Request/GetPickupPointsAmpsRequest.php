@@ -10,7 +10,6 @@ readonly class GetPickupPointsAmpsRequest implements RequestInterface
     private const string HTTP_METHOD = 'GET';
 
     public function __construct(
-        private string $token,
         private string $region,
     ) {
     }
@@ -32,13 +31,6 @@ readonly class GetPickupPointsAmpsRequest implements RequestInterface
 
     public function getHeaders(): array
     {
-        return [
-            'Authorization' => "Bearer {$this->getToken()}",
-        ];
-    }
-
-    public function getToken(): string
-    {
-        return $this->token;
+        return [];
     }
 }
