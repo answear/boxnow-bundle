@@ -37,9 +37,9 @@ readonly class PickupPointService
     /**
      * @return PickupPointDTO[]
      */
-    public function getAllWithRegion(string $token, string $region): array
+    public function getAllWithRegion(string $region): array
     {
-        $response = $this->client->request(new GetPickupPointsAmpsRequest($token, $region));
+        $response = $this->client->request(new GetPickupPointsAmpsRequest($region));
 
         $pickupPointsResponse = GetPickupPointsAmpsResponse::fromArray(
             $this->serializer->decodeResponse($response)

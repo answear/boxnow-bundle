@@ -26,7 +26,7 @@ class PickupPointWithRegionServiceTest extends ServiceTestCase
             )
         );
 
-        $pickupPoints = $service->getAllWithRegion('token', 'region');
+        $pickupPoints = $service->getAllWithRegion('region');
         $actualData = [];
 
         foreach ($pickupPoints as $pickupPoint) {
@@ -75,7 +75,7 @@ class PickupPointWithRegionServiceTest extends ServiceTestCase
             )
         );
 
-        $service->getAllWithRegion('token', 'region');
+        $service->getAllWithRegion('region');
     }
 
     protected function getLoggerStream(): array
