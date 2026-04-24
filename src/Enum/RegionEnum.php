@@ -9,4 +9,5 @@ enum RegionEnum: string
     case Croatia = 'hr-HR';
     case Cyprus = 'el-CY';
     case Greece = 'el-GR';
+    case Bulgaria = 'bg-BG';
 }
