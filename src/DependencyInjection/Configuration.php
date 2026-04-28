@@ -16,10 +16,10 @@ class Configuration implements ConfigurationInterface
         $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('clientId')->isRequired()->cannotBeEmpty()->end()
-                ?->scalarNode('clientSecret')->isRequired()->cannotBeEmpty()->end()
-                ?->scalarNode('apiUrl')->defaultNull()->end()
-                ?->scalarNode('logger')->defaultNull()->end()
-            ?->end();
+                ->scalarNode('clientSecret')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('apiUrl')->defaultNull()->end()
+                ->scalarNode('logger')->defaultNull()->end()
+            ->end();
 
         return $treeBuilder;
     }

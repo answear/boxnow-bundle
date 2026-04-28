@@ -59,7 +59,7 @@ Or with locationapi (ex. https://locationapi-stage.boxnow.gr/v1/apms_el-GR.json)
 $pickupPoints->getAllByRegion(\Answear\BoxNowBundle\Enum\RegionEnum::Cyprus);
 ```
 
-will return `\Answear\BoxNowBundle\DTO\PickupPointDTO[]` only for Cyprus (available Greece, Cyprus, Croatia).
+will return `\Answear\BoxNowBundle\DTO\PickupPointDTO[]` only for Cyprus (available Greece, Cyprus, Croatia, Bulgaria).
 
 Final notes
 ------------
