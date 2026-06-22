@@ -8,7 +8,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
-use Throwable;
 
 class BoxNowLogger
 {
@@ -112,7 +111,7 @@ class BoxNowLogger
 
         try {
             return json_decode(json: $content, associative: true, flags: JSON_THROW_ON_ERROR);
-        } catch (Throwable) {
+        } catch (\Throwable) {
             return self::INVALID_JSON;
         }
     }

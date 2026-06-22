@@ -76,7 +76,7 @@ class ServiceTestCase extends TestCase
         return $this->serializer;
     }
 
-    protected function setClient(Client|null $client = null, bool $withLogger = false): void
+    protected function setClient(?Client $client = null, bool $withLogger = false): void
     {
         $this->client = $client ?? new Client(
             new RequestTransformer(
