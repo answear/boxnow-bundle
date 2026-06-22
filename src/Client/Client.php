@@ -14,7 +14,7 @@ class Client
 {
     private const CONNECTION_TIMEOUT = 10;
     private const TIMEOUT = 30;
-    
+
     public function __construct(
         private readonly RequestTransformerInterface $requestTransformer,
         private readonly BoxNowLogger $logger,
